@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+ install:
+    runtime-versions:
+      nodejs: 22
+    commanads:
+     - echo installing sources NPM depencies...
+     - npm install
+build:
+    commanads:
+     - echo build started on `date`
+     - echo building the Node.js application...
+     - npm run build
+post_build:
+    commanads:
+     - echo Build completed on `date`
+
+artifacts:
+     files:
+       - '**/*'
+base-directory: 'dist'
